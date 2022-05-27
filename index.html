@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input class="dark-mode__checkbox" type="checkbox" />
+
+    <div class="container">
+      <div class="shadow"></div>
+      <form action="./thank-you.html">
+        <h1>Hey there!</h1>
+
+        <label>
+          What's your name?
+          <input
+            type="text"
+            required
+            minlength="2"
+            maxlength="80"
+            pattern="[a-zA-Z]+"
+          />
+        </label>
+
+        <label>
+          What's your email?
+          <input
+            type="email"
+            required
+            minlength="5"
+            maxlength="80"
+            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+          />
+        </label>
+
+        <label>
+          What services are you looking for?
+          <select required>
+            <option value="">Choose a service</option>
+            <option>Website</option>
+            <option>Web app</option>
+            <option>Backend</option>
+          </select>
+        </label>
+
+        <label>
+          What is your budget?
+          <select required>
+            <option value="">Select budget</option>
+            <option>£10 - £500</option>
+            <option>£500 - £1000</option>
+            <option>+£1000</option>
+          </select>
+        </label>
+
+        <label>
+          Anything else you'd like to tell us?
+          <textarea
+            placeholder="Your message here..."
+            minlength="5"
+            maxlength="240"
+          ></textarea>
+        </label>
+
+        <label class="terms-label">
+          I agree with the T&Cs <input type="checkbox" required />
+        </label>
+
+        <button class="submit-btn">Submit →</button>
+      </form>
+    </div>
+  </body>
+</html>

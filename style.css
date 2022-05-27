@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+}
+
+:root {
+  /* Light theme */
+  --background: #f9f1fe;
+  --form-background: white;
+  --border-color: #f2d3f9;
+  --font-color: rgb(98, 98, 98);
+  --font-color-light: white;
+  --primary: #bc58d6;
+  --secondary: #5f9fec;
+}
+
+.dark-mode__checkbox {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  border: none;
+
+  display: grid;
+  align-items: center;
+}
+
+.dark-mode__checkbox::before {
+  content: 'Dark mode: OFF';
+  position: absolute;
+  left: -110px;
+  width: 100px;
+  color: #000000aa;
+}
+
+.dark-mode__checkbox:checked::before {
+  content: 'Dark mode: ON';
+  color: #ffffffaa;
+}
+
+.dark-mode__checkbox:checked ~ .container {
+  /* Dark theme */
+  --background: #2f353c;
+  --form-background: rgb(46, 46, 46);
+  --border-color: #76a869;
+  --font-color: rgb(242, 242, 242);
+  --font-color-light: white;
+  --primary: #0071fc;
+  --secondary: #7bec5f;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.shadow {
+  position: absolute;
+  background: linear-gradient(220deg, var(--primary), var(--secondary));
+  border-radius: 5px;
+
+  width: 300px;
+  height: 490px;
+
+  filter: blur(12px);
+}
+
+form {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.5rem;
+  border-radius: 5px;
+  background-color: var(--form-background);
+  color: var(--font-color);
+  width: 300px;
+
+  position: relative;
+}
+
+form h1 {
+  text-align: center;
+  background: linear-gradient(-90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+label {
+  display: grid;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  border: none;
+  padding: 0.2rem;
+  border-radius: 3px;
+  background: none;
+  color: var(--font-color);
+}
+
+textarea {
+  resize: none;
+}
+
+*:focus {
+  outline: 2px solid var(--border-color);
+}
+
+.terms-label {
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+  border-bottom: none;
+}
+
+.submit-btn {
+  border: none;
+  padding: 0.4rem;
+  border-radius: 40px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--font-color-light);
+}
